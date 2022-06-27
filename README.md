@@ -8,7 +8,7 @@
 ## Getting Started
 ```
 # clone the project
-git clone https://github.com/bromberis/atomai.git
+git clone [https://github.com/bromberis/atomai.git](https://github.com/JusterisJ/books.git)
 
 # open Visual Studio code
 code .
