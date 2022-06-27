@@ -1,5 +1,14 @@
+## Framework Used
+* React v18.0
+* Bootstrap v5.1
+* MongoDB
+* Postman
+* Jira
+
+## Getting Started
+```
 # clone the project
-git clone https://github.com/JusterisJ/books.git
+git clone https://github.com/bromberis/atomai.git
 
 # open Visual Studio code
 code .
