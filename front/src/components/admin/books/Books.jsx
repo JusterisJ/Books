@@ -44,16 +44,16 @@ export default function Books() {
                 placeholder="Pavadinimas"
                 {...register("title", {
                   required: true,
-                  pattern: /^[[^A-Za-ząčęėįšųūžĄČĘĖĮŠŲŪŽ0-9]*$/i,
+                  pattern: /^[[^A-Za-ząčęėį šųūžĄČĘĖĮŠŲŪŽ0-9]*$/i,
                   maxLength: 100,
                   minLength: 2,
                 })}
               />
               <span className="text-danger fw-light">
-                {errors.name?.type === "pattern" && "Negali būti specialų simbolių"}
-                {errors.name?.type === "required" && "Pavadinimas būtinas"}
-                {errors.name?.type === "minLength" && "Turi būti bent 2 simboliai"}
-                {errors.name?.type === "maxLength" && "Ne daugiau kaip 100 simbolių"}
+                {errors.title?.type === "pattern" && "Negali būti specialų simbolių"}
+                {errors.title?.type === "required" && "Pavadinimas būtinas"}
+                {errors.title?.type === "minLength" && "Turi būti bent 2 simboliai"}
+                {errors.title?.type === "maxLength" && "Ne daugiau kaip 100 simbolių"}
               </span>
             </div>
             <div className="col-lg-3 col-sm-12 mt-3">
@@ -64,16 +64,16 @@ export default function Books() {
                 placeholder="Autorius"
                 {...register("author", {
                   required: true,
-                  pattern: /^[[^A-Za-ząčęėįšųūžĄČĘĖĮŠŲŪŽ0-9]*$/i,
+                  pattern: /^[[^A-Za-ząčęėįšų ūžĄČĘĖĮŠŲŪŽ0-9]*$/i,
                   maxLength: 100,
                   minLength: 2,
                 })}
               />
               <span className="text-danger fw-light">
-                {errors.name?.type === "pattern" && "Negali būti specialų simbolių"}
-                {errors.name?.type === "required" && "Autoriaus vardas būtinas"}
-                {errors.name?.type === "minLength" && "Turi būti bent 2 simboliai"}
-                {errors.name?.type === "maxLength" && "Ne daugiau kaip 100 simbolių"}
+                {errors.author?.type === "pattern" && "Negali būti specialų simbolių"}
+                {errors.author?.type === "required" && "Autoriaus vardas būtinas"}
+                {errors.author?.type === "minLength" && "Turi būti bent 2 simboliai"}
+                {errors.author?.type === "maxLength" && "Ne daugiau kaip 100 simbolių"}
               </span>
             </div>
             <div className="col-lg-3 col-sm-12 mt-3">
@@ -83,17 +83,19 @@ export default function Books() {
                 name="description"
                 placeholder="Aprašymas"
                 {...register("description", {
-                  pattern: /^[[^A-Za-ząčęėįšųūžĄČĘĖĮŠŲŪŽ0-9]*$/i,
-                  maxLength: 300,
+                  // pattern: /^[[^A-Za-ząčęėįš .ųūžĄČĘĖĮŠŲŪŽ0-9]*$/i,
+                  // maxLength: 300,
                   minLength: 2,
                 })}
               />
-              <span className="text-danger fw-light">
-                {errors.name?.type === "pattern" && "Negali būti specialų simbolių"}
+              <div>
+                <span className="">
+                  {errors.description?.type === "pattern" && "Negali būti specialų simbolių"}
 
-                {errors.name?.type === "minLength" && "Turi būti bent 2 simboliai"}
-                {errors.name?.type === "maxLength" && "Ne daugiau kaip 300 simbolių"}
-              </span>
+                  {errors.description?.type === "minLength" && "Turi būti bent 2 simboliai"}
+                  {errors.description?.type === "maxLength" && "Ne daugiau kaip 300 simbolių"}
+                </span>
+              </div>
             </div>
             <div className="col-lg-3 col-sm-12 mt-3">
               <input className="rounded-0 input-custom form-control" type="date" name="releaseDate" id="date-inp" min="1900-01-01" max="2099-01-01" defaultValue={new Date().toISOString().substr(0, 10)} {...register("releaseDate")} />
